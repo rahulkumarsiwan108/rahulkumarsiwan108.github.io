@@ -1,0 +1,2275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rahul Kumar's portfolio - Data Analyst, Python Developer, SQL Enthusiast. Explore my projects, skills, and experience in data analysis and visualization." />
+  <title>Rahul Kumar — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual Google Analytics Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_GA_MEASUREMENT_ID');
+  </script>
+  -->
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rahul Kumar",
+    "jobTitle": "Data Analyst",
+    "description": "Data Analyst, Python Developer, and SQL Enthusiast specializing in data analysis, visualization, and business intelligence.",
+    "url": "https://rahulkumarsiwan108.github.io",
+    "sameAs": [
+      "https://github.com/rahulkumarsiwan108/",
+      "https://www.linkedin.com/in/rahulkumarsiwan108",
+      "https://x.com/RahulKumar_108",
+      "https://www.instagram.com/rahulkumar_siwan108",
+      "https://www.facebook.com/rahulkumarsiwan108/",
+      "https://t.me/+918825209157"
+    ],
+    "knowsAbout": ["Python", "SQL", "Excel", "Data Analysis", "Data Visualization", "Power BI", "Pandas", "NumPy"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Data Analyst",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --text:#e6eef6;
+      --bg-gradient: linear-gradient(180deg,#071027 0%, #081426 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    /* Light mode variables */
+    body.light{
+      --bg:#ffffff;
+      --card:#fefefe;
+      --muted:#64748b;
+      --accent:#00ffff;
+      --glass: rgba(0,0,0,0.03);
+      --text:#1f2937;
+      --bg-gradient: linear-gradient(135deg,#e0f7ff 0%, #b3e5fc 25%, #81d4fa 50%, #4fc3f7 75%, #00ffff 100%);
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth; overflow-x:hidden;}
+    html,body{margin:0; background:var(--bg-gradient); color:var(--text); transition:all 0.3s ease; position:relative;}
+    body{padding:0; overflow-x:hidden;}
+    
+    /* ========== PARTICLE BACKGROUND ========== */
+    #particles-js{position:fixed; width:100%; height:100%; top:0; left:0; z-index:0; pointer-events:none;}
+    .container{position:relative; z-index:1;}
+    header{position:relative; z-index:100;}
+    
+    /* ========== READING PROGRESS BAR ========== */
+    .reading-progress{position:fixed; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--accent),#7c3aed); transform:scaleX(0); transform-origin:left; z-index:1000;}
+
+    /* ========== CUSTOM CURSOR ========== */
+    .custom-cursor{width:20px; height:20px; border:2px solid var(--accent); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transition:all 0.1s ease; transform:translate(-50%, -50%);}
+    .cursor-dot{width:8px; height:8px; background:var(--accent); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transition:all 0.05s ease; transform:translate(-50%, -50%);}
+    
+    /* Sparkle Effect */
+    .sparkle{position:fixed; width:6px; height:6px; background:var(--accent); border-radius:50%; pointer-events:none; z-index:9997; animation:sparkleAnim 0.6s ease-out forwards;}
+    @keyframes sparkleAnim{0%{opacity:1; transform:scale(1);} 100%{opacity:0; transform:scale(0) translateY(-20px);}}
+    
+    /* Loading Screen */
+    .loading-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999; transition:opacity 0.5s ease;}
+    .loading-screen.hidden{opacity:0; pointer-events:none;}
+    .loader{width:50px; height:50px; border:4px solid rgba(6,182,212,0.2); border-top:4px solid var(--accent); border-radius:50%; animation:spin 1s linear infinite;}
+    @keyframes spin{0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);}}
+    .loading-text{margin-top:20px; color:var(--accent); font-size:16px; font-weight:600;}
+    .loading-progress{margin-top:10px; width:200px; height:3px; background:rgba(255,255,255,0.1); border-radius:2px; overflow:hidden;}
+    .loading-progress-bar{height:100%; background:linear-gradient(90deg,var(--accent),#7c3aed); border-radius:2px; width:0%; animation:loadingProgress 2s ease-out forwards;}
+    @keyframes loadingProgress{0%{width:0%;} 100%{width:100%;}}
+    
+    /* Scroll to Top Button */
+    .scroll-top{position:fixed; bottom:30px; right:30px; width:50px; height:50px; background:linear-gradient(135deg,var(--accent),#7c3aed); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:0; visibility:hidden; transition:all 0.3s ease; z-index:999; box-shadow:0 4px 15px rgba(6,182,212,0.4);}
+    .scroll-top.visible{opacity:1; visibility:visible;}
+    .scroll-top:hover{transform:translateY(-5px); box-shadow:0 6px 20px rgba(6,182,212,0.6);}
+    .scroll-top i{color:#fff; font-size:20px; font-weight:bold;}
+    
+    /* ========== WHATSAPP FLOATING BUTTON ========== */
+    .whatsapp-float{position:fixed; bottom:100px; right:30px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:999; box-shadow:0 4px 15px rgba(37,211,102,0.4); animation:pulse 2s infinite;}
+    .whatsapp-float:hover{transform:scale(1.1); box-shadow:0 6px 20px rgba(37,211,102,0.6);}
+    .whatsapp-float i{color:#fff; font-size:30px;}
+    @keyframes pulse{0%,100%{box-shadow:0 4px 15px rgba(37,211,102,0.4);} 50%{box-shadow:0 4px 25px rgba(37,211,102,0.8);}}
+    
+    /* ========== NOTIFICATION TOAST ========== */
+    .toast{position:fixed; top:100px; right:30px; background:linear-gradient(135deg,var(--accent),#7c3aed); color:#fff; padding:15px 20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:9998; opacity:0; transform:translateX(400px); transition:all 0.3s ease;}
+    .toast.show{opacity:1; transform:translateX(0);}
+    .toast i{margin-right:10px;}
+    
+    .container{width:100%; max-width:1000px; margin:auto; padding:20px;}
+
+    /* Navbar */
+    header{position:fixed; top:0; left:0; width:100%; z-index:100; background:rgba(15,23,36,0.9); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:space-between; padding:12px 20px; border-radius:0 0 14px 14px; transition:all 0.3s ease;}
+    body.light header{background:rgba(255,255,255,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(0,0,0,0.05);}
+    body{padding-top:80px;}
+    .brand{display:flex; gap:10px; align-items:center;}
+    .logo{width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#7c3aed); display:grid; place-items:center; font-weight:800; color:#fff; font-size:18px; animation:logoFloat 3s ease-in-out infinite;}
+    @keyframes logoFloat{0%,100%{transform:translateY(0px);} 50%{transform:translateY(-5px);}}
+    nav{display:flex; align-items:center; gap:4px;}
+    nav a{margin-left:14px; text-decoration:none; color:var(--muted); font-size:14px; font-weight:500; transition:color 0.3s; position:relative;}
+    nav a:hover{color:var(--accent);}
+    nav a::after{content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background:var(--accent); transition:width 0.3s;}
+    nav a:hover::after{width:100%;}
+
+    /* Theme Toggle Button */
+    .theme-toggle{background:var(--glass); border:1px solid rgba(255,255,255,0.1); padding:8px 12px; border-radius:10px; cursor:pointer; font-size:18px; transition:all 0.3s ease; margin-left:14px;}
+    .theme-toggle:hover{background:rgba(255,255,255,0.08); transform:scale(1.1) rotate(20deg);}
+    
+
+
+    h1,h2,h3{margin:0;}
+    h2{font-size:28px;}
+    p.lead{margin:4px 0 0; color:var(--muted); font-size:13px;}
+
+    /* ========== GLASSMORPHISM CARDS ========== */
+    .card{background:var(--glass); border-radius:var(--radius); padding:28px; backdrop-filter: blur(10px); box-shadow:0 8px 32px rgba(2,6,23,0.6); margin-top:24px; transition:all 0.3s ease; border:1px solid rgba(255,255,255,0.05);}
+    body.light .card{box-shadow:0 8px 25px rgba(0,255,255,0.08); border:1px solid rgba(0,255,255,0.1); background:rgba(255,255,255,0.95);}
+    .card:hover{transform:translateY(-5px); box-shadow:0 12px 40px rgba(6,182,212,0.2);}
+    body.light .card:hover{box-shadow:0 12px 35px rgba(0,255,255,0.15);}
+
+    .hero{display:grid; grid-template-columns:1fr 300px; gap:20px; align-items:center;}
+    .intro p{color:var(--muted); line-height:1.6; margin-top:10px;}
+    
+    /* ========== GRADIENT ANIMATED TEXT ========== */
+    .gradient-text{background:linear-gradient(90deg, var(--accent), #7c3aed, #ec4899, var(--accent)); background-size:300% 300%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:gradientShift 3s ease infinite;}
+    @keyframes gradientShift{0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;}}
+    
+    /* Typing Animation */
+    .typing-text{color:var(--accent); border-right:2px solid var(--accent); padding-right:5px; animation:blink 0.7s infinite;}
+    @keyframes blink{0%,100%{border-color:transparent;} 50%{border-color:var(--accent);}}
+    
+    .cta{display:flex; gap:12px; margin-top:18px;}
+    .btn{background:linear-gradient(90deg,var(--accent),#7c3aed); padding:10px 18px; border-radius:12px; color:#fff; text-decoration:none; font-weight:700; transition:all 0.3s; border:none; cursor:pointer; position:relative; overflow:hidden;}
+    .btn::before{content:''; position:absolute; top:50%; left:50%; width:0; height:0; border-radius:50%; background:rgba(255,255,255,0.3); transform:translate(-50%, -50%); transition:width 0.6s, height 0.6s;}
+    .btn:hover::before{width:300px; height:300px;}
+    .btn:hover{transform:scale(1.05); box-shadow:0 5px 20px rgba(6,182,212,0.4);}
+    .btn-outline{border:1px solid rgba(255,255,255,0.06); padding:10px 18px; border-radius:12px; color:var(--muted); text-decoration:none; transition:all 0.3s; background:transparent;}
+    .btn-outline:hover{background:rgba(255,255,255,0.05); color:var(--accent); border-color:var(--accent);}
+    .btn-secondary{background:linear-gradient(135deg,#10b981,#059669); padding:10px 18px; border-radius:12px; color:#fff; text-decoration:none; font-weight:700; transition:all 0.3s; border:none; cursor:pointer; position:relative; overflow:hidden;}
+    .btn-secondary::before{content:''; position:absolute; top:50%; left:50%; width:0; height:0; border-radius:50%; background:rgba(255,255,255,0.3); transform:translate(-50%, -50%); transition:width 0.6s, height 0.6s;}
+    .btn-secondary:hover::before{width:300px; height:300px;}
+    .btn-secondary:hover{transform:scale(1.05); box-shadow:0 5px 20px rgba(16,185,129,0.4);}
+
+    /* ========== 3D AVATAR WITH TILT ========== */
+    .avatar{
+      height:280px;
+      width:280px;
+      border-radius:14px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+      box-shadow:0 8px 25px rgba(0,0,0,0.5);
+      transition:transform 0.3s ease;
+      position:relative;
+    }
+    body.light .avatar{background:linear-gradient(180deg, rgba(0,255,255,0.03), rgba(255,255,255,0.95)); box-shadow:0 8px 25px rgba(0,255,255,0.1);}
+    .avatar::before{content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:linear-gradient(45deg, transparent, rgba(6,182,212,0.1), transparent); transform:rotate(45deg); transition:all 0.5s;}
+    body.light .avatar::before{background:linear-gradient(45deg, transparent, rgba(0,255,255,0.15), transparent);}
+    .avatar:hover::before{top:100%; left:100%;}
+    .avatar:hover{transform:scale(1.05) rotateY(5deg); box-shadow:0 15px 40px rgba(6,182,212,0.4);}
+    body.light .avatar:hover{box-shadow:0 15px 40px rgba(0,255,255,0.2);}
+    .avatar img{
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      object-position: top center;
+    }
+
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px;}
+    .education-internship-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; margin-top:24px; align-items:stretch;}
+    .education-internship-grid section{min-height:0; max-width:none; padding:20px; background:var(--card); border-radius:var(--radius); box-shadow:0 8px 32px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.05);}
+    body.light .education-internship-grid section{box-shadow:0 8px 25px rgba(0,255,255,0.08); border:1px solid rgba(0,255,255,0.1); background:rgba(255,255,255,0.96);}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:16px; border-radius:12px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.05);}
+    body.light .stat{background:linear-gradient(180deg, rgba(0,255,255,0.02), rgba(255,255,255,0.9)); border:1px solid rgba(0,255,255,0.1);}
+    .stat::before{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(6,182,212,0.1), transparent); transition:left 0.5s;}
+    body.light .stat::before{background:linear-gradient(90deg, transparent, rgba(0,255,255,0.15), transparent);}
+    .stat:hover::before{left:100%;}
+    .stat:hover{transform:translateY(-4px); box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+    body.light .stat:hover{box-shadow:0 6px 20px rgba(0,255,255,0.2);}
+    .stat strong{display:block; font-size:20px;}
+    .stat-number{display:inline-block;}
+    .muted{color:var(--muted); font-size:13px;}
+
+    /* ========== TEXT REVEAL ON SCROLL ========== */
+    .reveal{opacity:0; transform:translateY(30px); transition:all 0.6s ease;}
+    .reveal.active{opacity:1; transform:translateY(0);}
+
+    /* ========== SOCIAL SHARE BUTTONS ========== */
+    .share-buttons{display:flex; gap:12px; justify-content:center; margin-top:10px;}
+    .share-btn{display:flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; text-decoration:none; transition:all 0.3s ease; font-size:16px; box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    .share-btn:hover{transform:translateY(-3px) scale(1.1); box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+    .share-btn.twitter{background:#1da1f2; color:#fff;}
+    .share-btn.linkedin{background:#0077b5; color:#fff;}
+    .share-btn.facebook{background:#1877f2; color:#fff;}
+    .share-btn.email{background:#ea4335; color:#fff;}
+
+    /* ========== COPY BUTTON ========== */
+    .copy-btn{background:none; border:none; color:var(--muted); cursor:pointer; padding:4px 8px; border-radius:4px; transition:all 0.3s ease; font-size:14px;}
+    .copy-btn:hover{color:var(--accent); background:rgba(6,182,212,0.1);}
+    .copy-btn.copied{color:#10b981;}
+    body.light .copy-btn{color:#64748b;}
+    body.light .copy-btn:hover{background:rgba(245,158,11,0.1);}
+
+    section{margin-top:28px;}
+    
+    /* ========== PROJECT FILTER BUTTONS ========== */
+    .filter-buttons{display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center;}
+    .filter-btn{padding:8px 16px; background:var(--glass); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:var(--muted); cursor:pointer; transition:all 0.3s; font-size:14px;}
+    body.light .filter-btn{border:1px solid rgba(0,0,0,0.1);}
+    .filter-btn:hover, .filter-btn.active{background:linear-gradient(90deg,var(--accent),#7c3aed); color:#fff; border-color:transparent;}
+    
+    .projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px;}
+    .project{background:var(--card); border-radius:12px; padding:14px; text-align:center; transition:all 0.25s; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.05);}
+    body.light .project{border:1px solid rgba(0,0,0,0.05);}
+    .project.hide{display:none;}
+    .project:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+    body.light .project:hover{box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+    .project:hover .project-overlay{opacity:1;}
+    .project img{width:100%; height:140px; object-fit:cover; border-radius:8px; transition:transform 0.3s;}
+    .project:hover img{transform:scale(1.05);}
+    .project-overlay{position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, rgba(6,182,212,0.9), rgba(124,58,237,0.9)); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; border-radius:12px; padding:20px;}
+    body.light .project-overlay{background:linear-gradient(135deg, rgba(245,158,11,0.9), rgba(217,119,6,0.9));}
+    .project-overlay p{color:#fff; font-size:14px; font-weight:500; margin:0;}
+    .project h4{margin:10px 0 6px;}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+    .tag{padding:6px 8px; background:rgba(255,255,255,0.03); font-size:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);}
+    body.light .tag{background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.08);}
+    .project-links{display:flex; gap:8px; margin-top:12px; justify-content:center;}
+
+    .skills{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .skill{padding:10px 16px; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:10px; font-weight:500; display:flex; flex-direction:column; align-items:center; gap:8px; transition:all 0.3s; position:relative; border:1px solid rgba(255,255,255,0.03);}
+    body.light .skill{background:linear-gradient(90deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); border:1px solid rgba(0,0,0,0.05);}
+    .skill:hover{background:linear-gradient(90deg, rgba(6,182,212,0.15), rgba(124,58,237,0.15)); transform:translateY(-2px) scale(1.05); box-shadow:0 4px 12px rgba(6,182,212,0.2);}
+    body.light .skill:hover{background:linear-gradient(90deg, rgba(245,158,11,0.15), rgba(217,119,6,0.15)); box-shadow:0 4px 12px rgba(245,158,11,0.2);}
+    .skill-icon{font-size:18px;}
+    .skill-name{display:flex; align-items:center; gap:8px;}
+    .skill-bar{width:100%; height:6px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; margin-top:4px;}
+    body.light .skill-bar{background:rgba(0,0,0,0.1);}
+    .skill-progress{height:100%; background:linear-gradient(90deg,var(--accent),#7c3aed); border-radius:10px; transition:width 1s ease; position:relative; overflow:hidden;}
+    .skill-progress::after{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation:shimmer 2s infinite;}
+    @keyframes shimmer{0%{left:-100%;} 100%{left:100%;}}
+
+    /* ========== ANIMATED TIMELINE ========== */
+    .timeline{position:relative; padding:20px 0;}
+    .timeline::before{content:''; position:absolute; left:90%; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--accent), #7c3aed); transform:translateX(-50%);}
+    .timeline-item{display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; position:relative;}
+    .timeline-item:nth-child(odd) .timeline-content{order:1; text-align:right;}
+    .timeline-item:nth-child(even) .timeline-content{order:2; text-align:left;}
+    .timeline-content{width:80%; background:var(--card); padding:15px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.2); transition:all 0.3s; border:1px solid rgba(255,255,255,0.05);}
+    body.light .timeline-content{box-shadow:0 4px 15px rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.05);}
+    .timeline-content:hover{transform:scale(1.05); box-shadow:0 6px 20px rgba(6,182,212,0.3);}
+    .timeline-dot{width:20px; height:20px; background:var(--accent); border-radius:50%; position:absolute; left:90%; transform:translateX(-50%); box-shadow:0 0 0 4px var(--bg), 0 0 0 6px var(--accent); z-index:1;}
+    
+    /* ========== ACHIEVEMENT BADGES ========== */
+    .badges{display:flex; gap:15px; flex-wrap:wrap; margin-top:20px; justify-content:center;}
+    .badge{background:linear-gradient(135deg, var(--accent), #7c3aed); padding:10px 20px; border-radius:20px; color:#fff; font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px; box-shadow:0 4px 15px rgba(6,182,212,0.3); transition:all 0.3s; animation:badgePop 0.5s ease;}
+    .badge:hover{transform:translateY(-5px) rotate(5deg); box-shadow:0 6px 20px rgba(6,182,212,0.5);}
+    .badge i{font-size:18px;}
+    @keyframes badgePop{0%{transform:scale(0);} 50%{transform:scale(1.1);} 100%{transform:scale(1);}}
+
+    /* ========== TESTIMONIALS SLIDER ========== */
+    .testimonials{position:relative; overflow:hidden; padding:20px 0;}
+    .testimonial-track{display:flex; transition:transform 0.5s ease;}
+    .testimonial{min-width:100%; padding:20px; background:var(--card); border-radius:12px; text-align:center; border:1px solid rgba(255,255,255,0.05);}
+    body.light .testimonial{border:1px solid rgba(0,0,0,0.05);}
+    .testimonial img{width:80px; height:80px; border-radius:50%; margin-bottom:15px; border:3px solid var(--accent);}
+    .testimonial p{font-style:italic; color:var(--muted); margin:10px 0;}
+    .testimonial h5{color:var(--accent); margin-top:10px;}
+    .testimonial-nav{display:flex; justify-content:center; gap:10px; margin-top:15px;}
+    .testimonial-dot{width:10px; height:10px; border-radius:50%; background:var(--muted); cursor:pointer; transition:all 0.3s;}
+    .testimonial-dot.active{background:var(--accent); width:30px; border-radius:5px;}
+    
+    /* ========== CONFETTI ANIMATION ========== */
+    .confetti{position:fixed; width:10px; height:10px; background:var(--accent); top:-10px; z-index:9999; animation:confettiFall 3s linear forwards; pointer-events:none;}
+    @keyframes confettiFall{0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(100vh) rotate(720deg); opacity:0;}}
+    
+    /* ========== PARALLAX SECTIONS ========== */
+    .parallax-section{position:relative; overflow:hidden;}
+    .parallax-bg{position:absolute; top:-50px; left:0; width:100%; height:calc(100% + 100px); background:linear-gradient(135deg, rgba(6,182,212,0.05), rgba(124,58,237,0.05)); z-index:-1; transition:transform 0.1s ease-out;}
+    body.light .parallax-bg{background:linear-gradient(135deg, rgba(6,182,212,0.08), rgba(124,58,237,0.08));}
+    
+    /* ========== THEME SELECTOR ========== */
+    .theme-selector{position:fixed; top:100px; left:20px; background:var(--card); padding:15px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:998; opacity:0; transform:translateX(-300px); transition:all 0.3s; border:1px solid rgba(255,255,255,0.05);}
+    body.light .theme-selector{box-shadow:0 4px 15px rgba(0,0,0,0.1); border:1px solid rgba(0,0,0,0.1);}
+    .theme-selector.show{opacity:1; transform:translateX(0);}
+    .theme-selector h4{margin:0 0 10px; font-size:14px; color:var(--text);}
+    .theme-option{width:40px; height:40px; border-radius:50%; cursor:pointer; margin:5px; display:inline-block; border:2px solid transparent; transition:all 0.3s;}
+    .theme-option:hover{transform:scale(1.1); border-color:var(--accent);}
+    .theme-option.active{border-color:var(--accent); box-shadow:0 0 10px var(--accent);}
+    .theme-cyan{background:linear-gradient(135deg, #06b6d4, #0891b2);}
+    .theme-purple{background:linear-gradient(135deg, #7c3aed, #6d28d9);}
+    .theme-green{background:linear-gradient(135deg, #10b981, #059669);}
+    .theme-red{background:linear-gradient(135deg, #ef4444, #dc2626);}
+    .theme-orange{background:linear-gradient(135deg, #f59e0b, #d97706);}
+    .theme-toggle-btn{position:fixed; top:100px; left:20px; width:50px; height:50px; background:linear-gradient(135deg,var(--accent),#7c3aed); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:999; box-shadow:0 4px 15px rgba(6,182,212,0.4); transition:all 0.3s;}
+    .theme-toggle-btn:hover{transform:scale(1.1) rotate(90deg);}
+    .theme-toggle-btn i{color:#fff; font-size:20px;}
+    
+    /* ========== IMAGE LIGHTBOX ========== */
+    .lightbox{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:none; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s;}
+    body.light .lightbox{background:rgba(0,0,0,0.85);}
+    .lightbox.show{display:flex; opacity:1;}
+    .lightbox-content{max-width:90%; max-height:90%; position:relative; animation:zoomIn 0.3s;}
+    .lightbox-content img{width:100%; height:auto; border-radius:12px; box-shadow:0 10px 50px rgba(0,0,0,0.5);}
+    .lightbox-close{position:absolute; top:-60px; right:0; width:50px; height:50px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:24px; color:#fff; transition:all 0.3s;}
+    .lightbox-close:hover{transform:rotate(90deg) scale(1.1);}
+    @keyframes zoomIn{0%{transform:scale(0.5);} 100%{transform:scale(1);}}
+    
+    /* ========== SOUND TOGGLE ========== */
+    .sound-toggle{position:fixed; bottom:170px; right:30px; width:50px; height:50px; background:linear-gradient(135deg,#f59e0b,#d97706); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:999; box-shadow:0 4px 15px rgba(245,158,11,0.4); transition:all 0.3s;}
+    .sound-toggle:hover{transform:scale(1.1);}
+    .sound-toggle i{color:#fff; font-size:20px;}
+    .sound-toggle.muted{background:linear-gradient(135deg,#6b7280,#4b5563);}
+    
+    /* ========== EASTER EGG ========== */
+    .easter-egg{position:fixed; bottom:50%; right:50%; transform:translate(50%, 50%); width:200px; height:200px; background:linear-gradient(135deg, var(--accent), #7c3aed); border-radius:50%; display:none; align-items:center; justify-content:center; z-index:9999; animation:easterEggBounce 0.5s ease; box-shadow:0 10px 50px rgba(6,182,212,0.5);}
+    .easter-egg.show{display:flex;}
+    .easter-egg-content{text-align:center; color:#fff;}
+    .easter-egg-content h3{margin:0; font-size:24px;}
+    .easter-egg-content p{margin:10px 0 0; font-size:14px;}
+    @keyframes easterEggBounce{0%,100%{transform:translate(50%, 50%) scale(1);} 50%{transform:translate(50%, 50%) scale(1.1);}}
+
+    /* ========== VISITOR COUNTER ========== */
+    .visitor-counter{position:fixed; top:70px; right:20px; background:var(--glass); backdrop-filter:blur(10px); padding:10px 15px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); z-index:998; display:flex; align-items:center; gap:8px; box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+    body.light .visitor-counter{border:1px solid rgba(0,0,0,0.1); box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+    .visitor-counter i{color:var(--accent); font-size:16px;}
+    .visitor-counter span{color:var(--text); font-size:14px; font-weight:600;}
+    body.light .visitor-counter span{color:#0f172a;}
+    
+    /* ========== MUSIC PLAYER ========== */
+    .music-player{position:fixed; bottom:240px; right:30px; width:50px; height:50px; background:linear-gradient(135deg,#ec4899,#8b5cf6); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:999; box-shadow:0 4px 15px rgba(236,72,153,0.4); transition:all 0.3s;}
+    .music-player:hover{transform:scale(1.1); box-shadow:0 6px 20px rgba(236,72,153,0.6);}
+    .music-player i{color:#fff; font-size:20px;}
+    .music-player.playing{animation:musicPulse 1s infinite;}
+    @keyframes musicPulse{0%,100%{transform:scale(1);} 50%{transform:scale(1.1);}}
+    
+    /* ========== GITHUB STATS ========== */
+    .github-stats{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-top:20px;}
+    .github-stat-card{background:var(--card); padding:20px; border-radius:12px; text-align:center; border:1px solid rgba(255,255,255,0.05); transition:all 0.3s;}
+    body.light .github-stat-card{border:1px solid rgba(0,0,0,0.05);}
+    .github-stat-card:hover{transform:translateY(-5px); box-shadow:0 6px 20px rgba(6,182,212,0.3);}
+    .github-stat-card i{font-size:30px; color:var(--accent); margin-bottom:10px;}
+    .github-stat-card .stat-value{font-size:24px; font-weight:700; color:var(--text); display:block; margin:10px 0 5px;}
+    .github-stat-card .stat-label{font-size:13px; color:var(--muted);}
+    .github-loading{text-align:center; color:var(--muted); padding:20px;}
+    
+    /* ========== BLOG SECTION ========== */
+    .blog-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-top:20px;}
+    .blog-card{background:var(--card); border-radius:12px; overflow:hidden; transition:all 0.3s; border:1px solid rgba(255,255,255,0.05); cursor:pointer;}
+    body.light .blog-card{border:1px solid rgba(0,0,0,0.05);}
+    .blog-card:hover{transform:translateY(-8px); box-shadow:0 8px 25px rgba(6,182,212,0.3);}
+    .blog-card-img{width:100%; height:180px; object-fit:cover; background:linear-gradient(135deg, var(--accent), #7c3aed);}
+    .blog-card-content{padding:20px;}
+    .blog-card-title{font-size:18px; font-weight:700; margin:0 0 10px; color:var(--text);}
+    .blog-card-excerpt{font-size:14px; color:var(--muted); line-height:1.6; margin:0 0 15px;}
+    .blog-card-meta{display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted);}
+    .blog-card-date{display:flex; align-items:center; gap:5px;}
+    .blog-card-read{color:var(--accent); font-weight:600; text-decoration:none;}
+    .blog-card-read:hover{text-decoration:underline;}
+    
+    /* ========== CERTIFICATIONS ========== */
+    .cert-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:20px;}
+    .cert-card{background:var(--card); border-radius:12px; padding:20px; text-align:center; border:1px solid rgba(255,255,255,0.05); transition:all 0.3s; position:relative; overflow:hidden;}
+    body.light .cert-card{border:1px solid rgba(0,0,0,0.05);}
+    .cert-card::before{content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:linear-gradient(45deg, transparent, rgba(6,182,212,0.1), transparent); transform:rotate(45deg); transition:all 0.5s;}
+    .cert-card:hover::before{top:100%; left:100%;}
+    .cert-card:hover{transform:translateY(-5px); box-shadow:0 6px 20px rgba(6,182,212,0.3);}
+    .cert-icon{font-size:40px; color:var(--accent); margin-bottom:15px;}
+    .cert-title{font-size:16px; font-weight:700; color:var(--text); margin:0 0 8px;}
+    .cert-issuer{font-size:13px; color:var(--muted); margin:0 0 15px;}
+    .cert-verify{display:inline-block; padding:8px 16px; background:linear-gradient(90deg,var(--accent),#7c3aed); color:#fff; border-radius:8px; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.3s;}
+    .cert-verify:hover{transform:scale(1.05); box-shadow:0 4px 15px rgba(6,182,212,0.4);}
+    
+    /* ========== PROJECT CAROUSEL ========== */
+    .project-carousel{position:relative; overflow:hidden; border-radius:12px; margin-top:20px;}
+    .carousel-container{display:flex; transition:transform 0.5s ease;}
+    .carousel-slide{min-width:100%; position:relative;}
+    .carousel-slide img{width:100%; height:400px; object-fit:cover; border-radius:12px;}
+    .carousel-caption{position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding:30px; color:#fff;}
+    .carousel-caption h4{margin:0 0 10px; font-size:22px;}
+    .carousel-caption p{margin:0; font-size:14px; opacity:0.9;}
+    .carousel-btn{position:absolute; top:50%; transform:translateY(-50%); width:50px; height:50px; background:rgba(255,255,255,0.2); backdrop-filter:blur(10px); border:none; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s; z-index:10;}
+    .carousel-btn:hover{background:rgba(255,255,255,0.3); transform:translateY(-50%) scale(1.1);}
+    .carousel-btn i{color:#fff; font-size:20px;}
+    .carousel-btn.prev{left:20px;}
+    .carousel-btn.next{right:20px;}
+    .carousel-indicators{position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:10;}
+    .carousel-indicator{width:10px; height:10px; background:rgba(255,255,255,0.5); border-radius:50%; cursor:pointer; transition:all 0.3s;}
+    .carousel-indicator.active{background:#fff; width:30px; border-radius:5px;}
+    
+    /* ========== SOCIAL MEDIA FEED ========== */
+    .social-feed{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-top:20px;}
+    .social-post{background:var(--card); border-radius:12px; padding:20px; border:1px solid rgba(255,255,255,0.05); transition:all 0.3s;}
+    body.light .social-post{border:1px solid rgba(0,0,0,0.05);}
+    .social-post:hover{transform:translateY(-5px); box-shadow:0 6px 20px rgba(6,182,212,0.3);}
+    .social-post-header{display:flex; align-items:center; gap:12px; margin-bottom:15px;}
+    .social-post-avatar{width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#7c3aed);}
+    .social-post-info h5{margin:0; font-size:14px; color:var(--text);}
+    .social-post-info span{font-size:12px; color:var(--muted);}
+    .social-post-content{font-size:14px; color:var(--text); line-height:1.6; margin-bottom:15px;}
+    .social-post-footer{display:flex; gap:20px; font-size:13px; color:var(--muted);}
+    .social-post-footer span{display:flex; align-items:center; gap:5px; cursor:pointer; transition:color 0.3s;}
+    .social-post-footer span:hover{color:var(--accent);}
+
+    .edu-exp{display:grid; gap:14px; margin-top:18px;}
+    .edu-exp .card{padding:16px; background:var(--card); border-radius:12px; border:1px solid rgba(255,255,255,0.05);}
+    body.light .edu-exp .card{border:1px solid rgba(0,0,0,0.05);}
+
+    /* Contact */
+    form{display:grid; gap:10px; margin-top:12px;}
+    input,textarea{padding:10px; border-radius:8px; border:none; background:rgba(255,255,255,0.05); color:var(--text); transition:all 0.3s;}
+    body.light input, body.light textarea{background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.1);}
+    input:focus,textarea:focus{outline:2px solid var(--accent); transform:scale(1.02);}
+    .form-error{color:#ef4444; font-size:12px; margin-top:-5px; display:none;}
+    .form-error.show{display:block;}
+    input.error, textarea.error{outline:1px solid #ef4444;}
+
+    footer{margin-top:28px; padding:18px 0; color:var(--muted); font-size:13px; text-align:center;}
+    .footer-links{margin-top:6px;}
+    .footer-links a{color:var(--muted); margin:0 8px; font-size:13px; text-decoration:none;}
+    .footer-links a:hover{color:var(--accent);}
+    .social-icons{display:flex; gap:14px; justify-content:center; margin-top:6px;}
+    .social-icons a{color:var(--muted); font-size:20px; transition:transform 0.2s, color 0.2s;}
+    .social-icons a:hover{color:var(--accent); transform:scale(1.2) rotate(10deg);}
+
+    /* Mobile Responsive Design */
+    @media (max-width:880px){
+      body{padding-top:70px;}
+      header{flex-direction:column; align-items:center; gap:12px;}
+      .brand{justify-content:center;}
+      nav{flex-wrap:wrap; justify-content:center;}
+      .hero{grid-template-columns:1fr; text-align:center;}
+      .avatar{height:220px; width:220px; margin:0 auto;}
+      .intro{display:flex; flex-direction:column; align-items:center;}
+      .cta{justify-content:center;}
+      .education-internship-grid{gap:24px;}
+      .education-internship-grid section{padding:18px;}
+      .scroll-top{bottom:20px; right:20px; width:45px; height:45px;}
+      .whatsapp-float{bottom:90px; right:20px; width:55px; height:55px;}
+      .timeline::before{left:20px;}
+      .timeline-item{flex-direction:column; align-items:flex-start;}
+      .timeline-content{width:calc(100% - 40px); margin-left:40px; text-align:left !important;}
+      .timeline-dot{left:20px;}
+      .custom-cursor, .cursor-dot{display:none;}
+      .theme-toggle-btn{left:10px; width:45px; height:45px;}
+      .theme-selector{left:10px; top:90px;}
+      .sound-toggle{bottom:160px; right:20px; width:45px; height:45px;}
+      .music-player{bottom:220px; right:20px; width:45px; height:45px;}
+      .visitor-counter{top:50px; right:10px; padding:8px 12px; font-size:12px;}
+      .carousel-slide img{height:300px;}
+      .carousel-btn{width:40px; height:40px;}
+      .carousel-btn i{font-size:16px;}
+    }
+    
+    @media (max-width:600px){
+      body{padding-top:60px;}
+      .container{padding:12px;}
+      header{padding:10px 12px; border-radius:0 0 10px 10px;}
+      header h1{font-size:18px;}
+      .logo{width:36px; height:36px; font-size:16px;}
+      nav{flex-wrap:wrap; gap:8px; justify-content:center; width:100%;}
+      nav a{margin-left:0; font-size:13px;}
+      .theme-toggle{margin-left:0; padding:6px 10px; font-size:16px;}
+      .grid-3{grid-template-columns:1fr; gap:10px;}
+      .education-internship-grid{gap:20px;}
+      .education-internship-grid section{padding:16px;}
+      .stat{padding:12px;}
+      .skills{gap:8px; justify-content:center;}
+      .skill{padding:8px 12px; font-size:14px; min-width:120px;}
+      .skill-icon{font-size:16px;}
+      .projects{grid-template-columns:1fr; gap:12px;}
+      .project{padding:12px;}
+      .project-overlay{padding:15px;}
+      .project-overlay p{font-size:13px;}
+      .card{padding:18px; margin-top:16px;}
+      h2{font-size:22px;}
+      h3{font-size:20px;}
+      .avatar{height:180px; width:180px;}
+      .btn, .btn-outline{padding:8px 14px; font-size:14px;}
+      .cta{flex-direction:column; width:100%;}
+      .cta a{width:100%; text-align:center;}
+      input, textarea{font-size:14px;}
+      footer{font-size:12px;}
+      .footer-links a{font-size:12px;}
+      .social-icons a{font-size:18px;}
+      .scroll-top{bottom:15px; right:15px; width:40px; height:40px;}
+      .scroll-top i{font-size:18px;}
+      .whatsapp-float{bottom:80px; right:15px; width:50px; height:50px;}
+      .whatsapp-float i{font-size:25px;}
+      .loader{width:40px; height:40px;}
+      .loading-text{font-size:14px;}
+      .toast{right:10px; padding:12px 15px; font-size:14px;}
+      .badges{gap:10px;}
+      .badge{padding:8px 15px; font-size:12px;}
+      .theme-toggle-btn{left:10px; width:40px; height:40px;}
+      .theme-toggle-btn i{font-size:18px;}
+      .sound-toggle{bottom:150px; right:15px; width:40px; height:40px;}
+      .sound-toggle i{font-size:18px;}
+      .music-player{bottom:200px; right:15px; width:40px; height:40px;}
+      .music-player i{font-size:18px;}
+      .visitor-counter{top:40px; right:8px; padding:6px 10px; font-size:11px;}
+      .carousel-slide img{height:250px;}
+      .carousel-caption{padding:20px;}
+      .carousel-caption h4{font-size:18px;}
+      .blog-grid, .cert-grid, .social-feed{grid-template-columns:1fr;}
+    }
+    
+    @media (max-width:400px){
+      body{padding-top:50px;}
+      .avatar{height:160px; width:160px;}
+      h2{font-size:20px;}
+      .logo{width:32px; height:32px; font-size:14px;}
+      header h1{font-size:16px;}
+      .skill{min-width:100px; padding:6px 10px;}
+    }
+
+    #see-all-global{border:2px solid var(--accent); color:#fff; background:linear-gradient(90deg,var(--accent),#7c3aed); font-weight:800; letter-spacing:0.3px; padding:12px 22px; border-radius:14px; box-shadow:0 6px 20px rgba(6,182,212,0.35);} 
+    #see-all-global:hover{transform:translateY(-1px) scale(1.02);} 
+
+  </style>
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading Portfolio...</div>
+    <div class="loading-progress">
+      <div class="loading-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toast-message">Welcome to my portfolio!</span>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918825209157" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Sound Toggle Button -->
+  <div class="sound-toggle" id="sound-toggle" title="Toggle Sound">
+    <i class="fas fa-volume-up"></i>
+  </div>
+
+  <!-- Music Player Button -->
+  <div class="music-player" id="music-player" title="Toggle Music">
+    <i class="fas fa-music"></i>
+  </div>
+
+  <!-- Visitor Counter -->
+  <div class="visitor-counter" id="visitor-counter">
+    <i class="fas fa-eye"></i>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=rahulkumarsiwan108.github.io" alt="Visitors" style="margin-left:6px;height:18px;vertical-align:middle;"/>
+  </div>
+
+  <!-- Theme Color Selector Button -->
+  <div class="theme-toggle-btn" id="theme-color-btn" title="Change Theme Color">
+    <i class="fas fa-palette"></i>
+  </div>
+
+  <!-- Theme Color Selector Panel -->
+  <div class="theme-selector" id="theme-selector">
+    <h4>Choose Theme Color</h4>
+    <div class="theme-option theme-cyan active" data-theme="cyan" title="Cyan"></div>
+    <div class="theme-option theme-purple" data-theme="purple" title="Purple"></div>
+    <div class="theme-option theme-green" data-theme="green" title="Green"></div>
+    <div class="theme-option theme-red" data-theme="red" title="Red"></div>
+    <div class="theme-option theme-orange" data-theme="orange" title="Orange"></div>
+  </div>
+
+  <!-- Image Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close" id="lightbox-close">×</div>
+      <img src="" alt="Lightbox Image" id="lightbox-img">
+    </div>
+  </div>
+
+  <!-- Easter Egg -->
+  <div class="easter-egg" id="easter-egg">
+    <div class="easter-egg-content">
+      <h3>🎉 You Found Me!</h3>
+      <p>Secret Easter Egg Unlocked!</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="brand">
+      <div class="logo">RK</div>
+      <h1>Rahul Kumar</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+    <!--  <a href="#blog">Blog</a>         -->
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Hero -->
+    <main class="card reveal">
+      <div class="hero">
+        <div class="intro">
+          <h2>Hi, I'm <span class="gradient-text">Rahul Kumar</span></h2>
+          <p><span class="typing-text" id="typing-text">Data Analyst</span> | Skilled in Python, SQL, Excel, Power BI, and Statistics | Passionate about turning data into actionable insights.</p>
+          <div class="cta">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn-outline" href="#" id="download-cv">Download Resume</a>
+          </div>
+          <div class="grid-3">
+            <div class="stat">
+              <strong><span class="stat-number" data-target="0" data-stat="skills">0</span>+</strong>
+              <span class="muted">Skills Mastered</span>
+            </div>
+            <div class="stat">
+              <strong><span class="stat-number" data-target="0" data-stat="projects">0</span>+</strong>
+              <span class="muted">Projects Completed</span>
+            </div>
+            <div class="stat">
+              <strong>Fresher</strong>
+              <span class="muted">Experience Level</span>
+            </div>
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="https://i.postimg.cc/QxtcdzXb/profile.jpg" alt="Rahul Kumar">
+        </div>
+      </div>
+
+      <!-- About -->
+      <section id="about" class="reveal parallax-section">
+        <div class="parallax-bg"></div>
+        <h3>About Me</h3>
+        <p>Hello! I'm Rahul Kumar, a BCA Graduate and aspiring Data Analyst. I have a strong foundation in Python, SQL, Excel, Power BI, and Statistics. I enjoy working with data to uncover patterns and provide meaningful insights. I'm actively looking for opportunities to apply my knowledge in real-world projects and grow in the field of Data Analytics.</p>
+        
+        <!-- Achievement Badges -->
+        <div class="badges">
+          <div class="badge"><i class="fas fa-om"></i> Spiritual Enthusiast</div>
+          <div class="badge"><i class="fas fa-utensils"></i> Gastronomy Explorer</div>
+          <div class="badge"><i class="fas fa-plane"></i> Traveling</div>
+        </div>
+        
+        <!-- GitHub Stats -->
+        <h4 style="margin-top:30px; margin-bottom:10px;">GitHub Activity</h4>
+        <div class="github-stats" id="github-stats">
+          <div class="github-loading">Loading GitHub stats...</div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="reveal parallax-section">
+        <div class="parallax-bg"></div>
+        <h3>Skills</h3>
+        <div class="skills">
+          <div class="skill" data-skill="90">
+            <div class="skill-name">
+              <span class="skill-icon">🐍</span>
+              <span>Python</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="85">
+            <div class="skill-name">
+              <span class="skill-icon">🗄️</span>
+              <span>SQL</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="88">
+            <div class="skill-name">
+              <span class="skill-icon">📊</span>
+              <span>Excel</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="80">
+            <div class="skill-name">
+              <span class="skill-icon">📈</span>
+              <span>Power BI</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="85">
+            <div class="skill-name">
+              <span class="skill-icon">📉</span>
+              <span>Statistics</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="87">
+            <div class="skill-name">
+              <span class="skill-icon">🔢</span>
+              <span>NumPy</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="90">
+            <div class="skill-name">
+              <span class="skill-icon">🐼</span>
+              <span>Pandas</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="82">
+            <div class="skill-name">
+              <span class="skill-icon">📊</span>
+              <span>Matplotlib</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill" data-skill="78">
+            <div class="skill-name">
+              <span class="skill-icon">🤖</span>
+              <span>scikit-learn</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="reveal parallax-section">
+        <div class="parallax-bg"></div>
+        <h3>Projects</h3>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons" id="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+        </div>
+        
+        <div class="projects" id="projects-list">
+          <div class="github-loading">Loading projects...</div>
+        </div>
+      </section>
+
+
+
+      <!-- Testimonials -->
+
+
+<!--      
+      <section id="testimonials" class="reveal">
+        <h3>Testimonials</h3>
+        <div class="testimonials">
+          <div class="testimonial-track" id="testimonial-track">
+            <div class="testimonial">
+              <img src="https://i.pravatar.cc/150?img=1" alt="Person 1">
+              <p>"Rahul is an exceptional data analyst with great attention to detail. His Python skills are outstanding!"</p>
+              <h5>— John Doe, Data Scientist</h5>
+            </div>
+            <div class="testimonial">
+              <img src="https://i.pravatar.cc/150?img=2" alt="Person 2">
+              <p>"Working with Rahul was a pleasure. His SQL queries are efficient and his visualizations are top-notch!"</p>
+              <h5>— Jane Smith, Project Manager</h5>
+            </div>
+            <div class="testimonial">
+              <img src="https://i.pravatar.cc/150?img=3" alt="Person 3">
+              <p>"Rahul's ability to transform complex data into actionable insights is remarkable. Highly recommended!"</p>
+              <h5>— Mike Johnson, CEO</h5>
+            </div>
+          </div>
+          <div class="testimonial-nav">
+            <div class="testimonial-dot active" data-index="0"></div>
+            <div class="testimonial-dot" data-index="1"></div>
+            <div class="testimonial-dot" data-index="2"></div>
+          </div>
+        </div>
+      </section>
+
+
+    -->
+
+
+
+      <!-- Certifications -->
+      <section id="certifications" class="reveal">
+        <h3>🏆 Certifications</h3>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon">🐍</div>
+            <h4 class="cert-title">Data Science for Python</h4>
+            <p class="cert-issuer">APPSQUADZ</p>
+            <a href="https://www.dropbox.com/scl/fi/yhpu03q5gdn1e0xof6hmt/CodeSquadz_RahulKumar-1.pdf?rlkey=axq0a7bb9t56opyzppn4plvcp&st=l0ayioku&dl=0" class="cert-verify" target="_blank" rel="noopener noreferrer">Verify Certificate</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🗄️</div>
+            <h4 class="cert-title">SQL Database Management</h4>
+            <p class="cert-issuer">Microsoft Ignite</p>
+            <a href="https://www.dropbox.com/scl/fi/7kd2ls4ob77bvv7aryi5y/SQL_RAHUL.pdf?rlkey=gc18lbg8gjq5i860btp1ib0dk&st=iw9e55cr&dl=0" class="cert-verify" target="_blank" rel="noopener noreferrer">Verify Certificate</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">📊</div>
+            <h4 class="cert-title">Power BI Data Visualization</h4>
+            <p class="cert-issuer">Microsoft Learn</p>
+            <a href="#" class="cert-verify" target="_blank">Verify Certificate</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🤖</div>
+            <h4 class="cert-title">Machine Learning Internship</h4>
+            <p class="cert-issuer">Plasmid</p>
+            <a href="https://www.dropbox.com/scl/fi/0dceuvf2xdoqabjvoh1s1/_InternshipCertificate-RahulKumar.pdf?rlkey=97p8384lgea1cudok8oe3hpb9&st=45ie9j9d&dl=0" class="cert-verify" target="_blank" rel="noopener noreferrer">Verify Certificate</a>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">📈</div>
+            <h4 class="cert-title">Data Analytics Professional</h4>
+            <p class="cert-issuer">Simplilearn</p>
+            <a href="https://www.dropbox.com/scl/fi/ltit7b9k9dstg0qhy2jzg/RAHUL_KUMAR_DATA_ANALYST.pdf?rlkey=oh52ykmjhsh62z3ykgjyr1suu&st=rbu6npqw&dl=0" class="cert-verify" target="_blank" rel="noopener noreferrer">Verify Certificate</a>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Blog Section -->
+
+<!--
+      
+      <section id="blog" class="reveal">
+        <h3>📝 Latest Blog Posts</h3>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-card-img"></div>
+            <div class="blog-card-content">
+              <h4 class="blog-card-title">Getting Started with Python for Data Analysis</h4>
+              <p class="blog-card-excerpt">Learn the fundamentals of Python programming and how to use it for data analysis with Pandas and NumPy...</p>
+              <div class="blog-card-meta">
+                <span class="blog-card-date"><i class="far fa-calendar"></i> Dec 15, 2024</span>
+                <a href="#" class="blog-card-read">Read More →</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-img"></div>
+            <div class="blog-card-content">
+              <h4 class="blog-card-title">SQL Tips and Tricks for Data Analysts</h4>
+              <p class="blog-card-excerpt">Discover advanced SQL techniques that will help you write more efficient queries and optimize database performance...</p>
+              <div class="blog-card-meta">
+                <span class="blog-card-date"><i class="far fa-calendar"></i> Dec 10, 2024</span>
+                <a href="#" class="blog-card-read">Read More →</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-img"></div>
+            <div class="blog-card-content">
+              <h4 class="blog-card-title">Creating Interactive Dashboards with Power BI</h4>
+              <p class="blog-card-excerpt">Step-by-step guide to building professional and interactive dashboards that tell compelling data stories...</p>
+              <div class="blog-card-meta">
+                <span class="blog-card-date"><i class="far fa-calendar"></i> Dec 5, 2024</span>
+                <a href="#" class="blog-card-read">Read More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    -->
+
+      <!-- Education and Internship -->
+      <div class="education-internship-grid">
+        <section id="education" class="reveal">
+    <!--    <h3>Education & Experience</h3>  -->
+        <h3>Education</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>🎓 Bachelor of Computer Applications (BCA)</h4>
+              <p>Teerthanker Mahaveer University</p>
+              <span class="muted">2022 - 2025</span>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>📚 Intermediate</h4>
+              <p>D.A.V High School, Siwan</p>
+              <span class="muted">2020 - 2022</span>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>📚 Matriculation</h4>
+              <p>D.A.V High School, Siwan</p>
+              <span class="muted">2018 - 2020</span>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Internship -->
+      <section id="internship" class="reveal">
+        <h3>Internship</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>💼 DATA SCIENCE WITH PYTHON</h4>
+              <p>APPSQUADZ SOFTWARE PVT.LTD.</p>
+              <span class="muted">June 2024 - july 2024</span>
+              <p class="muted">Worked on data visualization projects using Python, SQL, Machine Learning, Deep Learning and Power BI. Analyzed sales data and created interactive dashboards.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>📊 Machine Learning</h4>
+              <p>Plasmid.</p>
+              <span class="muted">june 2024 - August 2024</span>
+              <p class="muted">Assisted in data cleaning, processing, and analysis. Created reports and presentations for modal.</p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        <!--  <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>🖥️ Python Development Intern</h4>
+              <p>CodeMasters</p>
+              <span class="muted">September 2023 - November 2023</span>
+              <p class="muted">Developed automation scripts and data processing tools using Python, Pandas, and NumPy.</p>
+            </div>
+            <div class="timeline-dot"></div> -->
+          </div>
+        </div>
+      </section>
+      </div>
+
+
+
+      <!-- Certificates -->
+     <!--
+      <section id="certificates" class="reveal">
+        <h3>Certificates</h3>
+        <div class="edu-exp">
+          <div class="card">
+            <h4>🏆 Python for Data Science</h4>
+            <p class="muted">Completed comprehensive Python course covering Pandas, NumPy, and Matplotlib</p>
+          </div>
+          <div class="card">
+            <h4>🏆 SQL Database Management</h4>
+            <p class="muted">Advanced SQL certification covering complex queries and database optimization</p>
+          </div>
+          <div class="card">
+            <h4>🏆 Power BI Data Visualization</h4>
+            <p class="muted">Expert-level Power BI certification for creating interactive dashboards</p>
+          </div>
+        </div>
+      </section>
+
+    -->
+
+      <!-- Contact -->
+      <section id="contact" class="reveal">
+        <h3>Contact</h3>
+
+        <!-- Contact Form (Formspree) -->
+        <form id="contact-form" action="https://formspree.io/f/mzzkjoyp" method="POST" aria-labelledby="contact-heading">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+            <textarea name="message" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
+            <input type="hidden" name="_subject" value="New portfolio enquiry">
+            <button class="btn" type="submit" aria-label="Send your message">Send Message</button>
+        </form>
+        <p id="contact-status" role="status" aria-live="polite" style="margin-top:12px; font-size:14px; color:var(--muted);"></p>
+
+        <!-- Social Sharing Buttons -->
+        <div class="social-share" style="margin-top:20px; text-align:center;">
+            <p style="margin-bottom:10px; font-size:14px; color:var(--muted);">Share my portfolio:</p>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Rahul%20Kumar%27s%20portfolio%20-%20Data%20Analyst%20%26%20Python%20Developer&url=https://rahulkumarsiwan108.github.io" target="_blank" class="share-btn twitter" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://rahulkumarsiwan108.github.io" target="_blank" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://rahulkumarsiwan108.github.io" target="_blank" class="share-btn facebook" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="mailto:?subject=Check%20out%20Rahul%20Kumar%27s%20Portfolio&body=Hi,%20I%20thought%20you%20might%20be%20interested%20in%20this%20portfolio:%20https://rahulkumarsiwan108.github.io" class="share-btn email" aria-label="Share via Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Direct Email -->
+        <div style="margin-top:20px; font-size:16px;">
+            📧 <strong>Email Me Directly:</strong>
+            <span id="email-text" style="color:var(--accent); cursor:pointer; text-decoration:underline;" title="Click to copy email">
+                rahulkumarsiwan108@gmail.com
+            </span>
+            <button id="copy-email-btn" class="copy-btn" title="Copy email to clipboard" aria-label="Copy email address">
+                <i class="fas fa-copy"></i>
+            </button>
+        </div>
+
+        <!-- WhatsApp -->
+
+<!--
+
+        <div style="margin-top:12px; font-size:16px;">
+            📱 <strong>WhatsApp:</strong>
+            <a href="https://wa.me/918825209157" target="_blank" style="color:var(--accent); text-decoration:none;">
+            Chat on WhatsApp
+            </a>
+        </div>
+
+
+    -->
+
+        <!-- Social Links -->
+        <div class="social-icons" style="margin-top:18px;">
+            <a href="https://github.com/rahulkumarsiwan108" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rahulkumarsiwan108" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/RahulKumar_108" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/rahulkumar_siwan108" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/rahulkumarsiwan108/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://t.me/rahulkumarsiwan108" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      © 2025 Rahul Kumar | Made with ❤️  
+      <div class="footer-links">
+        <a href="#about">About</a> | 
+        <a href="#skills">Skills</a> | 
+        <a href="#projects">Projects</a> | 
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+    // ========== PARTICLES BACKGROUND ==========
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#06b6d4' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#06b6d4',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+
+    // ========== CUSTOM CURSOR ==========
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+    
+    document.querySelectorAll('a, button, .project, .skill').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursor.style.borderColor = '#7c3aed';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.borderColor = 'var(--accent)';
+      });
+    });
+
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      updateSkillStat();
+      setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        animateStats();
+        animateSkills();
+        showToast('Welcome to my portfolio! 🎉');
+      }, 1500);
+    });
+
+    // ========== NOTIFICATION TOAST ==========
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // ========== THEME TOGGLE ==========
+    // Removed theme toggle for always dark mode
+
+    // ========== SCROLL TO TOP ==========
+    const scrollTopBtn = document.getElementById('scroll-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ========== TYPING ANIMATION ==========
+    const typingText = document.getElementById('typing-text');
+    const roles = ['Data Analyst', 'Python Developer', 'SQL Enthusiast', 'Data Visualizer', 'Problem Solver'];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeRole() {
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      let typeSpeed = isDeleting ? 50 : 100;
+      
+      if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500;
+      }
+      
+      setTimeout(typeRole, typeSpeed);
+    }
+    
+    setTimeout(typeRole, 1500);
+
+    // ========== STATS COUNTER ==========
+    function animateStatToTarget(stat, target) {
+      const start = parseInt(stat.textContent) || 0;
+      if (start === target) {
+        stat.textContent = target;
+        return;
+      }
+      const duration = 2000;
+      const startTime = performance.now();
+      const animate = (currentTime) => {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const value = Math.round(start + (target - start) * progress);
+        stat.textContent = value;
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          stat.textContent = target;
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+
+    function animateStats(elements) {
+      const statNumbers = elements || document.querySelectorAll('.stat-number');
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target')) || 0;
+        animateStatToTarget(stat, target);
+      });
+    }
+
+    function updateSkillStat() {
+      const skillStat = document.querySelector('.stat-number[data-stat="skills"]');
+      if (!skillStat) {
+        return;
+      }
+      const skillCount = document.querySelectorAll('.skill').length;
+      const currentTarget = parseInt(skillStat.getAttribute('data-target')) || 0;
+      if (currentTarget === skillCount) {
+        return;
+      }
+      skillStat.setAttribute('data-target', skillCount);
+      animateStats([skillStat]);
+    }
+
+    function updateProjectStat(count) {
+      const projectStat = document.querySelector('.stat-number[data-stat="projects"]');
+      if (!projectStat) {
+        return;
+      }
+      const currentTarget = parseInt(projectStat.getAttribute('data-target')) || 0;
+      if (currentTarget === count) {
+        return;
+      }
+      projectStat.setAttribute('data-target', count);
+      animateStats([projectStat]);
+    }
+
+    // ========== SKILLS PROGRESS BAR ==========
+    function animateSkills() {
+      const skills = document.querySelectorAll('.skill');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const skill = entry.target;
+            const progress = skill.querySelector('.skill-progress');
+            const percentage = skill.getAttribute('data-skill');
+            
+            setTimeout(() => {
+              progress.style.width = percentage + '%';
+            }, 200);
+            
+            observer.unobserve(skill);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skills.forEach(skill => observer.observe(skill));
+    }
+
+    const skillsContainer = document.querySelector('.skills');
+    if (skillsContainer) {
+      const skillsObserver = new MutationObserver(() => {
+        updateSkillStat();
+      });
+      skillsObserver.observe(skillsContainer, { childList: true });
+    }
+
+    // ========== TEXT REVEAL ON SCROLL ==========
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ========== TESTIMONIALS SLIDER ==========
+    const testimonialTrack = document.getElementById('testimonial-track');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    let currentTestimonial = 0;
+    
+    function showTestimonial(index) {
+      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+      testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+    
+    testimonialDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        currentTestimonial = index;
+        showTestimonial(index);
+      });
+    });
+    
+    // Auto-rotate testimonials
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonialDots.length;
+      showTestimonial(currentTestimonial);
+    }, 5000);
+
+    // ========== DOWNLOAD CV ==========
+    document.getElementById('download-cv').addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('Resume download started! 📄');
+      // You can add actual download link here
+      setTimeout(() => {
+        window.open('https://github.com/rahulkumarsiwan108', '_blank');
+      }, 1000);
+    });
+
+    // ========== FORM VALIDATION ==========
+    const form = document.querySelector('form');
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="_replyto"]');
+    const messageInput = form.querySelector('textarea[name="message"]');
+    
+    form.addEventListener('submit', (e) => {
+      let isValid = true;
+      
+      nameInput.classList.remove('error');
+      emailInput.classList.remove('error');
+      messageInput.classList.remove('error');
+      
+      if (nameInput.value.trim().length < 2) {
+        nameInput.classList.add('error');
+        isValid = false;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        emailInput.classList.add('error');
+        isValid = false;
+      }
+      
+      if (messageInput.value.trim().length < 10) {
+        messageInput.classList.add('error');
+        isValid = false;
+      }
+      
+      if (!isValid) {
+        e.preventDefault();
+        showToast('Please fill all fields correctly! ❌');
+      } else {
+        showToast('Message sent successfully! ✅');
+      }
+    });
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ========== CONFETTI ANIMATION ==========
+    function createConfetti() {
+      const colors = ['#06b6d4', '#7c3aed', '#ec4899', '#10b981', '#f59e0b'];
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }
+    }
+
+    // ========== PARALLAX EFFECT ==========
+    const parallaxSections = document.querySelectorAll('.parallax-section');
+    window.addEventListener('scroll', () => {
+      parallaxSections.forEach(section => {
+        const parallaxBg = section.querySelector('.parallax-bg');
+        if (parallaxBg) {
+          const scrolled = window.pageYOffset;
+          const sectionTop = section.offsetTop;
+          const speed = 0.5;
+          parallaxBg.style.transform = `translateY(${(scrolled - sectionTop) * speed}px)`;
+        }
+      });
+    });
+
+    // ========== THEME COLOR SELECTOR ==========
+    const themeColorBtn = document.getElementById('theme-color-btn');
+    const themeSelector = document.getElementById('theme-selector');
+    const themeOptions = document.querySelectorAll('.theme-option');
+
+    themeColorBtn.addEventListener('click', () => {
+      themeSelector.classList.toggle('show');
+    });
+
+    const themeColors = {
+      cyan: '#06b6d4',
+      purple: '#7c3aed',
+      green: '#10b981',
+      red: '#ef4444',
+      orange: '#f59e0b'
+    };
+
+    // Load saved theme color
+    const savedThemeColor = localStorage.getItem('themeColor') || 'cyan';
+    document.documentElement.style.setProperty('--accent', themeColors[savedThemeColor]);
+
+    // Set active state for saved theme
+    themeOptions.forEach(option => {
+      if (option.dataset.theme === savedThemeColor) {
+        option.classList.add('active');
+      }
+    });
+
+    themeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const theme = option.dataset.theme;
+        document.documentElement.style.setProperty('--accent', themeColors[theme]);
+
+        // Save to localStorage
+        localStorage.setItem('themeColor', theme);
+
+        themeOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+
+        showToast(`Theme changed to ${theme}! 🎨`);
+        themeSelector.classList.remove('show');
+      });
+    });
+
+    // ========== IMAGE LIGHTBOX ==========
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.lightbox-trigger');
+      if (!trigger) {
+        return;
+      }
+      e.stopPropagation();
+      lightboxImg.src = trigger.getAttribute('src');
+      lightbox.classList.add('show');
+    });
+    
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
+      }
+    });
+
+    // ========== SOUND TOGGLE ==========
+    let soundEnabled = true;
+    const soundToggle = document.getElementById('sound-toggle');
+    let audioContext;
+
+    // Initialize AudioContext on first user interaction
+    function initAudioContext() {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+    }
+
+    // Create a simple click sound using Web Audio API
+    function createClickSound() {
+      try {
+        if (!audioContext) initAudioContext();
+        if (audioContext.state === 'suspended') {
+          audioContext.resume();
+        }
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+
+        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.1);
+      } catch (e) {
+        // Fallback: do nothing if Web Audio API is not supported
+      }
+    }
+
+    soundToggle.addEventListener('click', () => {
+      initAudioContext(); // Ensure audio context is active
+      soundEnabled = !soundEnabled;
+      soundToggle.classList.toggle('muted');
+
+      if (soundEnabled) {
+        soundToggle.querySelector('i').className = 'fas fa-volume-up';
+        showToast('Sound enabled! 🔊');
+        backgroundMusic.volume = 0.3; // Unmute music
+      } else {
+        soundToggle.querySelector('i').className = 'fas fa-volume-mute';
+        showToast('Sound muted! 🔇');
+        backgroundMusic.volume = 0; // Mute music
+        if (musicPlaying) {
+          backgroundMusic.pause();
+          musicPlaying = false;
+          musicPlayer.classList.remove('playing');
+          musicPlayer.querySelector('i').className = 'fas fa-music';
+        }
+      }
+    });
+    
+    // Play sound on all clicks
+    document.querySelectorAll('button, a, .btn, .btn-outline, .filter-btn, .music-player, .theme-toggle, .sound-toggle, .whatsapp-float, .scroll-top').forEach(element => {
+      element.addEventListener('click', () => {
+        if (soundEnabled) {
+          createClickSound();
+        }
+      });
+    });
+
+    // ========== EASTER EGG ==========
+    let konamiCode = [];
+    const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    
+    document.addEventListener('keydown', (e) => {
+      konamiCode.push(e.key);
+      konamiCode = konamiCode.slice(-10);
+      
+      if (konamiCode.join(',') === konamiSequence.join(',')) {
+        const easterEgg = document.getElementById('easter-egg');
+        easterEgg.classList.add('show');
+        createConfetti();
+        
+        setTimeout(() => {
+          easterEgg.classList.remove('show');
+        }, 3000);
+      }
+    });
+    
+    // Simple easter egg - triple click on logo
+    const logo = document.querySelector('.logo');
+    let logoClickCount = 0;
+    let logoClickTimer;
+    
+    logo.addEventListener('click', () => {
+      logoClickCount++;
+      clearTimeout(logoClickTimer);
+      
+      if (logoClickCount === 3) {
+        const easterEgg = document.getElementById('easter-egg');
+        easterEgg.classList.add('show');
+        createConfetti();
+        showToast('🎉 Secret unlocked! You found the easter egg!');
+        
+        setTimeout(() => {
+          easterEgg.classList.remove('show');
+        }, 3000);
+        
+        logoClickCount = 0;
+      }
+      
+      logoClickTimer = setTimeout(() => {
+        logoClickCount = 0;
+      }, 500);
+    });
+
+    // ========== CONFETTI ON FORM SUBMIT ==========
+    form.addEventListener('submit', (e) => {
+      if (form.checkValidity()) {
+        createConfetti();
+      }
+    });
+
+    // ========== VISITOR COUNTER (CountAPI) ========== 
+    function updateVisitorCounter() {
+      fetch('https://api.countapi.xyz/update/rahulks-portfolio/visits/?amount=1')
+        .then(res => res.json())
+        .then(res => {
+          const vc = document.getElementById('visitor-count');
+          if(vc) vc.innerText = res.value;
+        })
+        .catch(() => {
+          const vc = document.getElementById('visitor-count');
+          if(vc) vc.innerText = "N/A";
+        });
+    }
+    document.addEventListener('DOMContentLoaded', updateVisitorCounter);
+
+    // ========== MUSIC PLAYER ==========
+    let musicPlaying = false;
+    const musicPlayer = document.getElementById('music-player');
+    // Using your custom music file
+    const backgroundMusic = new Audio('https://www.dropbox.com/scl/fi/3fucagt1irmv3jl48d538/AUD-20251003-WA0000._?rlkey=i6ba3965ivqbjr7lrh0g12vly&st=tz1lncco&dl=1'); // Your custom music
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.2; // Lower volume for better UX
+
+    musicPlayer.addEventListener('click', () => {
+      if (musicPlaying) {
+        backgroundMusic.pause();
+        musicPlayer.classList.remove('playing');
+        musicPlayer.querySelector('i').className = 'fas fa-music';
+        showToast('Music stopped! 🎵');
+        musicPlaying = false;
+      } else {
+        backgroundMusic.play().then(() => {
+          musicPlayer.classList.add('playing');
+          musicPlayer.querySelector('i').className = 'fas fa-pause';
+          showToast('Music playing! 🎵');
+          musicPlaying = true;
+        }).catch(e => {
+          console.error('Audio play failed:', e);
+          showToast('Unable to play music - browser may block autoplay. Try clicking again!', 'warning');
+          // Reset state
+          musicPlayer.classList.remove('playing');
+          musicPlayer.querySelector('i').className = 'fas fa-music';
+          musicPlaying = false;
+        });
+      }
+    });
+
+    // Handle audio loading errors
+    backgroundMusic.addEventListener('error', (e) => {
+      console.error('Audio loading failed:', e);
+      showToast('Music file failed to load. Please check your internet connection.', 'error');
+    });
+
+    // ========== GITHUB STATS ==========
+    async function fetchGitHubStats() {
+      const username = 'rahulkumarsiwan108';
+      const container = document.getElementById('github-stats');
+      if (!container) {
+        return;
+      }
+      try {
+        const [userResponse, reposResponse] = await Promise.all([
+          fetch(`https://api.github.com/users/${username}`),
+          fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
+            headers: {
+              Accept: 'application/vnd.github.mercy-preview+json'
+            }
+          })
+        ]);
+        if (!userResponse.ok || !reposResponse.ok) {
+          throw new Error('Request failed');
+        }
+        const user = await userResponse.json();
+        const repos = await reposResponse.json();
+        const totalStars = repos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
+        const totalForks = repos.reduce((sum, repo) => sum + (repo.forks_count || 0), 0);
+        container.innerHTML = `
+          <div class="github-stat-card">
+            <i class="fab fa-github"></i>
+            <span class="stat-value">${user.public_repos || 0}</span>
+            <span class="stat-label">Public Repos</span>
+          </div>
+          <div class="github-stat-card">
+            <i class="fas fa-users"></i>
+            <span class="stat-value">${user.followers || 0}</span>
+            <span class="stat-label">Followers</span>
+          </div>
+          <div class="github-stat-card">
+            <i class="fas fa-user-friends"></i>
+            <span class="stat-value">${user.following || 0}</span>
+            <span class="stat-label">Following</span>
+          </div>
+          <div class="github-stat-card">
+            <i class="fas fa-star"></i>
+            <span class="stat-value">${totalStars}</span>
+            <span class="stat-label">Total Stars</span>
+          </div>
+          <div class="github-stat-card">
+            <i class="fas fa-code-branch"></i>
+            <span class="stat-value">${totalForks}</span>
+            <span class="stat-label">Total Forks</span>
+          </div>
+        `;
+      } catch (error) {
+        container.innerHTML = '<div class="github-loading">Unable to load GitHub stats.</div>';
+      }
+    }
+    fetchGitHubStats();
+
+    let projectData = [];
+    let showAllGlobal = false;
+    const expandedBlocks = {};
+    let activeProjectFilter = 'all';
+    const projectFilters = document.getElementById('project-filters');
+    const projectsList = document.getElementById('projects-list');
+
+    function escapeHtml(value) {
+      if (!value) {
+        return '';
+      }
+      return value.replace(/[&<>"']/g, (char) => {
+        const entities = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        };
+        return entities[char] || char;
+      });
+    }
+
+    function renderFilterButtons(categories) {
+      if (!projectFilters) {
+        return;
+      }
+      const buttons = ['<button class="filter-btn" data-filter="all">All</button>'];
+      categories.forEach(([key, label]) => {
+        buttons.push(`<button class="filter-btn" data-filter="${key}">${label}</button>`);
+      });
+      projectFilters.innerHTML = buttons.join('');
+      const firstButton = projectFilters.querySelector('button[data-filter="all"]');
+      if (firstButton) {
+        firstButton.classList.add('active');
+      }
+    }
+
+    function renderProjects(filter) {
+      if (!projectsList) {
+        return;
+      }
+
+      // Compute filtered list first
+      const filtered = filter === 'all' ? projectData : projectData.filter(repo => {
+        const languageMatch = repo.language && repo.language.toLowerCase() === filter;
+        const topicMatch = repo.topics.some(topic => topic.toLowerCase() === filter);
+        return languageMatch || topicMatch;
+      });
+
+      if (!filtered.length) {
+        projectsList.innerHTML = '<div class="github-loading">No projects found.</div>';
+        return;
+      }
+
+      // Helper to render a flat list of projects
+      const renderCards = (repos) => repos.map(repo => {
+        const tags = [];
+        if (repo.language) tags.push(repo.language);
+        (repo.topics||[]).slice(0,3).forEach(t => tags.push(t));
+        const tagMarkup = tags.length ? tags.map(tag => `<div class="tag">${escapeHtml(tag)}</div>`).join('') : '<div class="tag">General</div>';
+        const homepageUrl = repo.homepage ? encodeURI(repo.homepage) : '';
+        const repoUrl = encodeURI(repo.url);
+        const title = escapeHtml(repo.name);
+        const description = escapeHtml(repo.description);
+        const ogImage = `https://opengraph.githubassets.com/1/rahulkumarsiwan108/${encodeURIComponent(repo.rawName)}`;
+        return `
+          <article class="project" data-category="${(repo.language||'Other').toLowerCase()}">
+            <img src="${ogImage}" alt="${title} preview" loading="lazy" />
+            <h4>${title}</h4>
+            <p class="muted">${description}</p>
+            <div class="tags">${tagMarkup}</div>
+            <div class="project-links">
+              <a class="btn-outline" href="${repoUrl}" target="_blank" rel="noopener noreferrer">View Repository</a>
+              ${homepageUrl ? `<a class="btn-outline" href="${homepageUrl}" target="_blank">Live Demo</a>` : ''}
+            </div>
+            <div class="project-stats"><span><i class="fas fa-star"></i> ${repo.stars||0}</span> <span><i class="fas fa-code-branch"></i> ${repo.forks||0}</span></div>
+          </article>
+        `;
+      }).join('');
+
+      if (filter === 'all') {
+        // All tab: show only 6 initially with a single global See All/Show Less
+        const toDisplay = showAllGlobal ? filtered : filtered.slice(0, 6);
+        const cards = renderCards(toDisplay);
+        const toggleBtn = (filtered.length > 6)
+          ? `<div style="text-align:center;margin:14px 0 6px;"><button id="see-all-global" class="btn btn-outline">${showAllGlobal ? 'Show Less' : 'See All'}</button></div>`
+          : '';
+        projectsList.innerHTML = cards + toggleBtn;
+        const seeAllBtn = document.getElementById('see-all-global');
+        if (seeAllBtn) {
+          seeAllBtn.onclick = () => {
+            showAllGlobal = !showAllGlobal;
+            renderProjects(filter);
+            showToast(showAllGlobal ? 'Showing all projects' : 'Showing top 6 projects');
+          };
+        }
+      } else {
+        // Specific category/topic: show all matching projects, no grouping, no limit
+        projectsList.innerHTML = renderCards(filtered);
+        showToast(`Showing ${filter} projects`);
+      }
+    }
+
+    function handleFilterClick(button) {
+      const filter = button.getAttribute('data-filter');
+      if (!filter) {
+        return;
+      }
+      showAllGlobal = filter === 'all';
+      projectFilters.querySelectorAll('button[data-filter]').forEach(btn => {
+        btn.classList.toggle('active', btn === button);
+      });
+      renderProjects(filter);
+      showToast(`Showing ${filter === 'all' ? 'all' : filter} projects`);
+    }
+
+    if (projectFilters) {
+      projectFilters.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-filter]');
+        if (button) {
+          handleFilterClick(button);
+        }
+      });
+    }
+
+    async function fetchGitHubProjects() {
+      const username = 'rahulkumarsiwan108';
+      if (!projectsList) {
+        return;
+      }
+      try {
+        let response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, {
+          headers: { Accept: 'application/vnd.github.mercy-preview+json' },
+          cache: 'no-store'
+        });
+        if (!response.ok) {
+          // Retry once without custom header
+          response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, { cache: 'no-store' });
+        }
+        if (!response.ok) {
+          const status = response.status;
+          const text = await response.text().catch(()=> '');
+          const friendly = status === 403 ? 'GitHub rate limit hit. Please refresh in a minute.' : 'Unable to load projects.';
+          projectsList.innerHTML = `<div class="github-loading">${friendly}</div>`;
+          console.warn('GitHub fetch failed', status, text);
+          return;
+        }
+        const repos = await response.json();
+        projectData = repos.filter(repo => !repo.fork && !repo.private).map(repo => ({
+          rawName: repo.name,
+          name: repo.name.replace(/-/g, ' '),
+          description: repo.description || 'Explore more details on GitHub.',
+          language: repo.language,
+          topics: Array.isArray(repo.topics) ? repo.topics : [],
+          url: repo.html_url,
+          homepage: repo.homepage,
+          stars: repo.stargazers_count || 0,
+          forks: repo.forks_count || 0
+        }));
+        updateProjectStat(projectData.length);
+        if (!projectData.length) {
+          projectsList.innerHTML = '<div class="github-loading">No projects available.</div>';
+          return;
+        }
+        const categoriesMap = new Map();
+        projectData.forEach(repo => {
+          if (repo.language) {
+            const key = repo.language.toLowerCase();
+            if (!categoriesMap.has(key)) {
+              categoriesMap.set(key, repo.language);
+            }
+          }
+          repo.topics.forEach(topic => {
+            const key = topic.toLowerCase();
+            if (!categoriesMap.has(key)) {
+              categoriesMap.set(key, topic);
+            }
+          });
+        });
+        const categories = Array.from(categoriesMap.entries()).slice(0, 12);
+        renderFilterButtons(categories);
+        renderProjects(activeProjectFilter);
+      } catch (error) {
+        projectsList.innerHTML = '<div class="github-loading">Unable to load projects.</div>';
+        console.error('GitHub fetch error', error);
+      }
+    }
+    fetchGitHubProjects();
+
+    // ========== AUTO DARK/LIGHT MODE ==========
+    // Disabled auto theme detection for always dark mode
+    /*
+    function autoThemeDetection() {
+      const hour = new Date().getHours();
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      // Auto switch based on time (6 AM - 6 PM = light, else dark)
+      if (hour >= 6 && hour < 18) {
+        if (!document.body.classList.contains('light')) {
+          document.body.classList.add('light');
+          showToast('☀️ Good morning! Light mode activated');
+        }
+      } else {
+        if (document.body.classList.contains('light')) {
+          document.body.classList.remove('light');
+          showToast('🌙 Good evening! Dark mode activated');
+        }
+      }
+    }
+
+    // Check on load and every hour
+    autoThemeDetection();
+    setInterval(autoThemeDetection, 3600000); // Check every hour
+    */
+
+    // ========== CONTACT FORM HANDLING ==========
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (contactStatus) {
+          contactStatus.textContent = 'Sending message...';
+          contactStatus.style.color = 'var(--muted)';
+        }
+        showToast('Sending message... 📤');
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(contactForm)
+          });
+          if (response.ok) {
+            showToast('Message sent successfully! ✅');
+            createConfetti();
+            contactForm.reset();
+            if (contactStatus) {
+              contactStatus.textContent = 'Thanks for reaching out! I will get back to you soon.';
+              contactStatus.style.color = 'var(--accent)';
+            }
+          } else {
+            if (contactStatus) {
+              contactStatus.textContent = 'Something went wrong. Please try again.';
+              contactStatus.style.color = '#ef4444';
+            }
+            showToast('Message failed to send ❌');
+          }
+        } catch (error) {
+          if (contactStatus) {
+            contactStatus.textContent = 'Unable to send message. Check your connection and try again.';
+            contactStatus.style.color = '#ef4444';
+          }
+          showToast('Message failed to send ❌');
+        }
+        setTimeout(() => {
+          if (contactStatus) {
+            contactStatus.textContent = '';
+            contactStatus.style.color = 'var(--muted)';
+          }
+        }, 6000);
+      });
+    }
+
+    // ========== LINKEDIN FEED SIMULATION ==========
+    // Since we can't directly embed LinkedIn feed without API, we'll create a simulated feed
+    function createSocialFeed() {
+      const socialPosts = [
+        {
+          platform: 'LinkedIn',
+          content: 'Excited to share my latest data analysis project! 📊 Used Python and Power BI to create interactive dashboards.',
+          likes: 45,
+          comments: 12,
+          time: '2 days ago'
+        },
+        {
+          platform: 'LinkedIn',
+          content: 'Just completed my SQL certification! 🎓 Ready to tackle complex database challenges.',
+          likes: 67,
+          comments: 18,
+          time: '5 days ago'
+        }
+      ];
+      
+      // You can add this to a section if needed
+
+    }
+    createSocialFeed();
+
+    // ========== ENHANCED CURSOR TRAIL ==========
+    let cursorTrail = [];
+    const maxTrailLength = 10;
+    
+    document.addEventListener('mousemove', (e) => {
+      // Create sparkle effect
+      if (Math.random() > 0.9) {
+        const sparkle = document.createElement('div');
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
+        sparkle.style.width = '4px';
+        sparkle.style.height = '4px';
+        sparkle.style.background = 'var(--accent)';
+        sparkle.style.borderRadius = '50%';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '9997';
+        sparkle.style.animation = 'sparkle 0.5s ease-out forwards';
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 500);
+      }
+    });
+    
+    // Add sparkle animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes sparkle {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(0); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // ========== TYPING SPEED TEST EASTER EGG ==========
+    let typingTestActive = false;
+    let typingStartTime = 0;
+    let typedText = '';
+
+    // Activate with Ctrl+Shift+T
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+        if (!typingTestActive) {
+          typingTestActive = true;
+          typingStartTime = Date.now();
+          typedText = '';
+          showToast('⌨️ Typing test started! Type as fast as you can!');
+        }
+      }
+    });
+
+    document.addEventListener('keypress', (e) => {
+      if (typingTestActive) {
+        typedText += e.key;
+        if (typedText.length >= 50) {
+          const timeTaken = (Date.now() - typingStartTime) / 1000;
+          const wpm = Math.round((50 / 5) / (timeTaken / 60));
+          showToast(`⚡ Your typing speed: ${wpm} WPM!`);
+          typingTestActive = false;
+          typedText = '';
+        }
+      }
+    });
+
+    // ========== PAGE ANALYTICS ==========
+    function trackPageAnalytics() {
+      const analytics = {
+        pageViews: parseInt(localStorage.getItem('pageViews') || '0') + 1,
+        lastVisit: new Date().toISOString(),
+        timeSpent: 0
+      };
+      
+      localStorage.setItem('pageViews', analytics.pageViews);
+      localStorage.setItem('lastVisit', analytics.lastVisit);
+      
+      // Track time spent
+      let startTime = Date.now();
+      window.addEventListener('beforeunload', () => {
+        const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+        const totalTime = parseInt(localStorage.getItem('totalTimeSpent') || '0') + timeSpent;
+        localStorage.setItem('totalTimeSpent', totalTime);
+      });
+    }
+    trackPageAnalytics();
+
+    // ========== READING PROGRESS BAR ==========
+    function updateReadingProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      document.getElementById('reading-progress').style.transform = `scaleX(${scrollPercent})`;
+    }
+    window.addEventListener('scroll', updateReadingProgress);
+
+    // ========== COPY TO CLIPBOARD ==========
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Email copied to clipboard!');
+      }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast('📋 Email copied to clipboard!');
+      });
+    }
+
+    // Email copy functionality
+    const emailText = document.getElementById('email-text');
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+
+    emailText.addEventListener('click', () => {
+      copyToClipboard('rahulkumarsiwan108@gmail.com');
+      copyEmailBtn.classList.add('copied');
+      setTimeout(() => copyEmailBtn.classList.remove('copied'), 2000);
+    });
+
+    copyEmailBtn.addEventListener('click', () => {
+      copyToClipboard('rahulkumarsiwan108@gmail.com');
+      copyEmailBtn.classList.add('copied');
+      setTimeout(() => copyEmailBtn.classList.remove('copied'), 2000);
+    });
+
+    // ========== PROJECT DEMO FUNCTION ==========
+    function showProjectDemo(projectType) {
+      const demoUrls = {
+        'sql-demo': 'https://github.com/rahulkumarsiwan108/Smart_Traffic_Management_System',
+        'powerbi-demo': 'https://github.com/rahulkumarsiwan108/smart_traffic_system'
+      };
+
+      if (demoUrls[projectType]) {
+        window.open(demoUrls[projectType], '_blank');
+      } else {
+        showToast('🚧 Demo coming soon! Check GitHub repo for code.', 'warning');
+      }
+    }
+
+    // ========== SMOOTH ANIMATIONS ON SCROLL ==========
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.blog-card, .cert-card, .github-stat-card').forEach(el => {
+      animationObserver.observe(el);
+    });
+    
+    // Add fadeInUp animation
+    const fadeStyle = document.createElement('style');
+    fadeStyle.textContent = `
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(fadeStyle);
+
+    // ========== KEYBOARD SHORTCUTS ==========
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+K to focus search (if you add search later)
+      if (e.ctrlKey && e.key === 'k') {
+        e.preventDefault();
+        showToast('⌨️ Keyboard shortcuts: Ctrl+M (Music), Ctrl+S (Sound)');
+      }
+      
+      // Ctrl+T to toggle theme (disabled for always dark mode)
+      
+      // Ctrl+M to toggle music
+      if (e.ctrlKey && e.key === 'm') {
+        e.preventDefault();
+        musicPlayer.click();
+      }
+      
+      // Ctrl+S to toggle sound
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        document.getElementById('sound-toggle').click();
+      }
+    });
+
+    // ========== WELCOME MESSAGE ==========
+    setTimeout(() => {
+      showToast('👋 Welcome to my portfolio! Explore all the features!');
+    }, 2000);
+
+    // Show keyboard shortcuts hint
+    setTimeout(() => {
+      showToast('💡 Tip: Press Ctrl+K to see keyboard shortcuts!');
+    }, 8000);
+
+    // ========== VISITOR COUNTER (CountAPI) ========== 
+    function updateVisitorCounter() {
+      fetch('https://api.countapi.xyz/update/rahulks-portfolio/visits/?amount=1')
+        .then(res => res.json())
+        .then(res => {
+          const vc = document.getElementById('visitor-count');
+          if(vc) vc.innerText = res.value;
+        })
+        .catch(() => {
+          const vc = document.getElementById('visitor-count');
+          if(vc) vc.innerText = "N/A";
+        });
+    }
+    document.addEventListener('DOMContentLoaded', updateVisitorCounter);
+
+  </script>
+</body>
+</html>
+</html>
